@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: #000;
+}
+
+.game-container {
+  background-color: #f92d9a;
+  padding: 1rem 5rem;
+  padding-bottom: 3rem;
+  border-radius: 2rem;
+  transition: all 1s;
+}
+
+.game-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  background-color: aliceblue;
+  color: #f92d9a;
+  border-radius: 2rem;
+  padding-block: 0.3rem;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-block: 3rem;
+}
+
+.icons-container span {
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  background-color: #000;
+  border-radius: 2rem;
+}
+
+.icons-container span:hover {
+  background-color: rgb(236, 121, 182);
+}
+
+.hands {
+  display: flex;
+  justify-content: center;
+  column-gap: 10rem;
+  overflow: hidden;
+}
+
+.hands > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hand-icon {
+  font-size: 12rem;
+  /* margin-top: -40px; */
+}
+
+.score-container {
+  margin-top: 2rem;
+  display: flex;
+  background-color: rgb(232, 110, 246);
+  border-radius: 5rem;
+  overflow: hidden;
+}
+
+.score-container p {
+  padding-inline: 1rem;
+  margin-block: 1rem;
+}
+
+.score-container span {
+  padding: 0 2rem;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.shakeUserHands {
+  animation: shakeUserHands 0.6s infinite ease-in-out;
+}
+
+.shakeComputerHands {
+  animation: shakeComputerHands 0.5s infinite ease-in-out;
+}
+
+@keyframes shakeUserHands {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-55deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes shakeComputerHands {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(55deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@media (max-width: 580px) {
+  body {
+    font-size: 16px;
+  }
+
+  .game-container {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 0;
+  }
+  
+  .icons-container span { 
+    padding: 0.5rem 1rem;
+  }
+
+  .hands {
+    display: flex;
+    justify-content: center;
+    column-gap: 2rem;
+    overflow: hidden;
+  }
+
+  .hand-icon {
+    font-size: 8rem;
+  }
+
+  .score-container p {
+    white-space: nowrap;
+    padding-inline: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .score-container span {
+    padding-inline: 1rem;
+    padding: 0 1rem;
+  }
+
+  .result {
+    font-size: 1.5rem;
+  }
+  
+}
+
+@media (max-width: 370px) {
+  .icons-container {
+    gap: 0rem;
+  }
+
+  .hands p {
+    font-size: 14px;
+  }
+
+  .hands {
+    gap: 0;
+  }
+
+  .hand-icon {
+    font-size: 6rem;
+  }
+
+  .result {
+    margin-top: 1rem;
+  }
+}
